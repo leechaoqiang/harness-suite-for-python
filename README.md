@@ -16,18 +16,28 @@
 
 ## 安装
 
-### Bash（Linux / macOS）
+### 一键安装（推荐）
+
+在 Claude Code 项目根目录直接执行，无需克隆仓库：
+
+**Bash（Linux / macOS）：**
 
 ```bash
-# 在你的 Claude Code 项目根目录执行
-bash install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/leechaoqiang/harness-suite-for-python/main/install.sh)
 ```
 
-### PowerShell（Windows）
+**PowerShell（Windows）：**
 
 ```powershell
-# 在你的 Claude Code 项目根目录执行
-.\install.ps1
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/leechaoqiang/harness-suite-for-python/main/install.ps1" -OutFile "install.ps1"; .\install.ps1; Remove-Item install.ps1
+```
+
+### 从源码安装
+
+```bash
+git clone https://github.com/leechaoqiang/harness-suite-for-python.git
+cd harness-suite-for-python
+bash install.sh --target /path/to/your/project
 ```
 
 ### 参数
@@ -41,11 +51,11 @@ bash install.sh
 示例：
 
 ```bash
-# 指定目标目录
-bash install.sh --target /path/to/your/project
+# 一键安装并指定目标目录
+bash <(curl -fsSL https://raw.githubusercontent.com/leechaoqiang/harness-suite-for-python/main/install.sh) --target /path/to/your/project
 
-# 跳过 superpowers 检查并强制覆盖
-.\install.ps1 -SkipSuperpowers -Force
+# 从源码安装，跳过 superpowers 检查并强制覆盖
+bash install.sh --skip-superpowers --force
 ```
 
 ### 安装后
