@@ -66,7 +66,7 @@ bash install.sh --skip-superpowers --force
 ## 源码目录结构
 
 ```
-harness-suite-for-py/
+harness-suite-for-python/
 ├── setup/                          # 初始化 Skill
 │   └── SKILL.md
 ├── workflow/                       # 工作流 Skills
