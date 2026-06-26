@@ -51,6 +51,9 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         --target)
+            if [[ "$2" == --* ]]; then
+                log_error "--target 需要指定一个路径，但收到的是选项 '$2'。用法: $0 --target <path>"
+            fi
             TARGET_DIR="$2"
             shift 2
             ;;
